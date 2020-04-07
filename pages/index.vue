@@ -1,72 +1,97 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        openapi-project
-      </h1>
-      <h2 class="subtitle">
-        This is a test for nuxt app.
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+    <h1 class="text-align-center mt-5">
+      臺中市公共自行車(iBike)租借站&即時車位資料
+    </h1>
+    <div class="search-area">
+      <div>
+        <label for="area">區域</label>
+        <select>
+          <option value="1">
+            西屯區
+          </option>
+          <option value="2">
+            西區
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for>日期</label>
+        <i>太陽</i>
+      </div>
+    </div>
+    <div class="bike-area">
+      <div class="bike-card">
+        <div class="position">
+          逢甲大學
+          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+        </div>
+        <div class="area">
+          西屯區
+        </div>
+        <div class="available-counts">
+          56
+        </div>
+        <small>Update time： 2020/02/09</small>
+      </div>
+      <div class="bike-card">
+        <div class="position">
+          逢甲大學
+          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+        </div>
+        <div class="area">
+          西屯區
+        </div>
+        <div class="available-counts">
+          56
+        </div>
+        <small>Update time： 2020/02/09</small>
+      </div>
+      <div class="bike-card">
+        <div class="position">
+          逢甲大學
+          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+        </div>
+        <div class="area">
+          西屯區
+        </div>
+        <div class="available-counts">
+          56
+        </div>
+        <small>Update time： 2020/02/09</small>
+      </div>
+      <div class="bike-card">
+        <div class="position">
+          逢甲大學
+          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+        </div>
+        <div class="area">
+          西屯區
+        </div>
+        <div class="available-counts">
+          56
+        </div>
+        <small>Update time： 2020/02/09</small>
+      </div>
+      <div class="bike-card">
+        <div class="position">
+          逢甲大學
+          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+        </div>
+        <div class="area">
+          西屯區
+        </div>
+        <div class="available-counts">
+          56
+        </div>
+        <small>Update time： 2020/02/09</small>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  }
+  layout: 'web'
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
