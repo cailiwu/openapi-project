@@ -21,70 +21,18 @@
       </div>
     </div>
     <div class="bike-area">
-      <div class="bike-card">
+      <div v-for="(bike, i) in bikeList" :key="i" class="bike-card">
         <div class="position">
-          逢甲大學
-          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
+          {{ bike.Position }}
+          <span>{{ bike.CAddress }}</span>
         </div>
         <div class="area">
-          西屯區
+          {{ bike.CArea }}
         </div>
         <div class="available-counts">
-          56
+          {{ bike.AvailableCNT }}
         </div>
-        <small>Update time： 2020/02/09</small>
-      </div>
-      <div class="bike-card">
-        <div class="position">
-          逢甲大學
-          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
-        </div>
-        <div class="area">
-          西屯區
-        </div>
-        <div class="available-counts">
-          56
-        </div>
-        <small>Update time： 2020/02/09</small>
-      </div>
-      <div class="bike-card">
-        <div class="position">
-          逢甲大學
-          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
-        </div>
-        <div class="area">
-          西屯區
-        </div>
-        <div class="available-counts">
-          56
-        </div>
-        <small>Update time： 2020/02/09</small>
-      </div>
-      <div class="bike-card">
-        <div class="position">
-          逢甲大學
-          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
-        </div>
-        <div class="area">
-          西屯區
-        </div>
-        <div class="available-counts">
-          56
-        </div>
-        <small>Update time： 2020/02/09</small>
-      </div>
-      <div class="bike-card">
-        <div class="position">
-          逢甲大學
-          <span>台中市福星路/逢甲路口(潮洋機車停車場</span>
-        </div>
-        <div class="area">
-          西屯區
-        </div>
-        <div class="available-counts">
-          56
-        </div>
-        <small>Update time： 2020/02/09</small>
+        <small>Update time： {{ bike.UpdateTime }}</small>
       </div>
     </div>
   </div>
@@ -92,6 +40,16 @@
 
 <script>
 export default {
-  layout: 'web'
+  layout: 'web',
+  async asyncData ({ $axios }) {
+    const { data } = await $axios.get('/YoubikeAllAPI')
+    return { bikeList: data }
+    // return { result: data }
+  },
+  data () {
+    return {
+      bikeList: []
+    }
+  }
 }
 </script>
