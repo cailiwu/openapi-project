@@ -44,7 +44,6 @@ export default {
   async asyncData ({ $axios }) {
     const { data } = await $axios.get('/YoubikeAllAPI')
     return { bikeList: data }
-    // return { result: data }
   },
   data () {
     return {
