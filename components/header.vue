@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="#">
-      Logo
+      <i class="fas fa-bicycle" />
     </a>
     <!-- Links -->
     <ul class="navbar-nav">

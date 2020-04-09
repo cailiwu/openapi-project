@@ -13,6 +13,7 @@
     "heroku-postbuild": "yarn build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@nuxtjs/axios": "^5.3.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.1.3",
