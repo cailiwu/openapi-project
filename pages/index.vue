@@ -6,7 +6,8 @@
     <div class="search-area">
       <div>
         <label for="area">區域</label>
-        <select>
+        <select v-model="selectArea">
+          <option value="all">全部</option>
           <option v-for="area in areaOptions" :key="area" :value="area">
             {{ area }}
           </option>
@@ -18,7 +19,7 @@
       </div>
     </div>
     <div class="bike-area">
-      <div v-for="(bike, i) in bikeList" :key="i" class="bike-card">
+      <div v-for="(bike, i) in filterBike" :key="i" class="bike-card">
         <div class="position">
           {{ bike.Position }}
           <span>{{ bike.CAddress }}</span>
@@ -44,6 +45,7 @@ export default {
   },
   data () {
     return {
+      selectArea: 'all',
       bikeList: []
     }
   },
@@ -54,6 +56,13 @@ export default {
         areaMap.add(item.CArea)
       })
       return Array.from(areaMap)
+    },
+    filterBike () {
+      if (this.selectArea === 'all') { return this.bikeList }
+      const bikeList = this.bikeList.filter((item) => {
+        return this.selectArea === item.CArea
+      })
+      return bikeList
     }
   }
 }
