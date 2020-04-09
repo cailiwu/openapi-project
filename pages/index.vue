@@ -7,11 +7,8 @@
       <div>
         <label for="area">區域</label>
         <select>
-          <option value="1">
-            西屯區
-          </option>
-          <option value="2">
-            西區
+          <option v-for="area in areaOptions" :key="area" :value="area">
+            {{ area }}
           </option>
         </select>
       </div>
@@ -48,6 +45,15 @@ export default {
   data () {
     return {
       bikeList: []
+    }
+  },
+  computed: {
+    areaOptions () {
+      const areaMap = new Set()
+      this.bikeList.forEach((item) => {
+        areaMap.add(item.CArea)
+      })
+      return Array.from(areaMap)
     }
   }
 }
